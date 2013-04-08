@@ -1,10 +1,3 @@
-
-/**
- * Example input:
- *
- *
- **/
-
 var http        = require('http')
   , url         = require('url')
   ;
