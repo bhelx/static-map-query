@@ -1,6 +1,4 @@
-var http = require('http')
-  , url  = require('url')
-  ;
+var url = require('url');
 
 function createQuery (opts) {
   var qObj = {};

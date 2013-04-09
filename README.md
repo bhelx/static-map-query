@@ -12,8 +12,16 @@ No runtime dependencies. Uses mocha for testing.
 
 ## Test
 
+You need mocha.
+
 ```
-mocha test.js
+npm install -g mocha
+```
+
+To run:
+
+```
+mocha
 ```
 
 ## TODO
