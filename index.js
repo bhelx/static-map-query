@@ -2,34 +2,33 @@ var http        = require('http')
   , url         = require('url')
   ;
 
-function createQuery (obj) {
+function createQuery (opts) {
   var qObj = {};
 
-  qObj.center = obj.center;
+  /** Copy generic keys first **/
+  Object.keys(opts).forEach(function (key) {
+    qObj[key] = opts[key];
+  })
 
-  qObj.zoom = obj.zoom || 13;
+  if (qObj.size)
+    qObj.size = opts.size.width + 'x' + opts.size.height;
 
-  qObj.size = obj.size.width + 'x' + obj.size.height;
+  if (qObj.markers) {
+    if (qObj.markers.length > 0) qObj.markers = [];
 
-  qObj.maptype = obj.maptype;
-
-  qObj.sensor = obj.sensor ? 'true' : 'false';
-
-  qObj.markers = [];
-  obj.markers.forEach(function (marker) {
-    qObj.markers.push('color:'+marker.color+'|label:'+marker.label+'|'+marker.latitude+','+marker.longitude);
-  });
+    opts.markers.forEach(function (marker) {
+      qObj.markers.push('color:'+marker.color+'|label:'+marker.label+'|'+marker.latitude+','+marker.longitude);
+    });
+  }
 
   return qObj;
 }
 
 module.exports.query = function (options) {
-
   return url.format({
     protocol: 'http',
     hostname: 'maps.googleapis.com',
     pathname: '/maps/api/staticmap',
     query: createQuery(options)
   });
-
 };
