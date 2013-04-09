@@ -38,7 +38,6 @@ describe('static maps query', function () {
     });
   });
 
-
 });
 
 

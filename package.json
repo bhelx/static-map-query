@@ -1,6 +1,12 @@
 {
   "name": "static-map-query",
   "version": "0.0.1",
+  "author": "bhelx <bhelx@freenode>",
+  "description": "Build a url to query google static maps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhelx/static-map-query.git"
+  },
 
   "devDependencies": {
     "mocha": "*"
