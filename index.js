@@ -1,5 +1,5 @@
-var http        = require('http')
-  , url         = require('url')
+var http = require('http')
+  , url  = require('url')
   ;
 
 function createQuery (opts) {
