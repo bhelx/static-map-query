@@ -17,7 +17,11 @@ function createQuery (opts) {
     if (qObj.markers.length > 0) qObj.markers = [];
 
     opts.markers.forEach(function (marker) {
-      qObj.markers.push('color:'+marker.color+'|label:'+marker.label+'|'+marker.latitude+','+marker.longitude);
+      qObj.markers.push([
+        'color:' + marker.color,
+        'label:'+marker.label,
+        marker.latitude+','+marker.longitude
+      ].join('|'));
     });
   }
 
