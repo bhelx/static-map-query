@@ -19,8 +19,8 @@ function createQuery (opts) {
     opts.markers.forEach(function (marker) {
       qObj.markers.push([
         'color:' + marker.color,
-        'label:'+marker.label,
-        marker.latitude+','+marker.longitude
+        'label:' + marker.label,
+        marker.latitude + ',' + marker.longitude
       ].join('|'));
     });
   }
