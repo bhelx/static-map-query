@@ -14,7 +14,7 @@ function createQuery (opts) {
     qObj.size = opts.size.width + 'x' + opts.size.height;
 
   if (qObj.markers) {
-    if (qObj.markers.length > 0) qObj.markers = [];
+    qObj.markers = [];
 
     opts.markers.forEach(function (marker) {
       qObj.markers.push([
